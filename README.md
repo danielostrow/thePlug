@@ -7,7 +7,7 @@
 ![Pixel Plugin Walker](assets/pixel-walker.svg)
 
 <!-- TYPING ANIMATION -->
-<a href="https://git.io/typing-svg"><img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=600&size=24&duration=3000&pause=1000&color=00D9FF&center=true&vCenter=true&multiline=true&repeat=true&width=600&height=80&lines=%3E+Connecting+to+marketplace...;%3E+Plugins+loaded.;%3E+Ready+to+enhance+Claude." alt="Typing SVG" /></a>
+<a href="https://git.io/typing-svg"><img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=600&size=24&duration=3000&pause=1000&color=00D9FF&center=true&vCenter=true&multiline=true&repeat=true&width=600&height=120&lines=%3E+Connecting+to+marketplace...;%3E+Plugins+loaded.;%3E+Ready+to+enhance+Claude." alt="Typing SVG" /></a>
 
 <!-- NEON BADGES -->
 <p>

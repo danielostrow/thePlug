@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="200" viewBox="0 0 800 200">
+  <defs>
+    <!-- Animated gradient -->
+    <linearGradient id="trippy" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#00d9ff">
+        <animate attributeName="stop-color" values="#00d9ff;#a855f7;#39ff14;#00d9ff" dur="3s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="50%" style="stop-color:#a855f7">
+        <animate attributeName="stop-color" values="#a855f7;#39ff14;#00d9ff;#a855f7" dur="3s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="100%" style="stop-color:#39ff14">
+        <animate attributeName="stop-color" values="#39ff14;#00d9ff;#a855f7;#39ff14" dur="3s" repeatCount="indefinite"/>
+      </stop>
+    </linearGradient>
+
+    <!-- Glow filter -->
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Scanline pattern -->
+    <pattern id="scanlines" patternUnits="userSpaceOnUse" width="4" height="4">
+      <line x1="0" y1="0" x2="4" y2="0" stroke="rgba(0,217,255,0.03)" stroke-width="1"/>
+    </pattern>
+
+    <!-- Grid pattern -->
+    <pattern id="grid" patternUnits="userSpaceOnUse" width="40" height="40">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(168,85,247,0.1)" stroke-width="0.5"/>
+    </pattern>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="200" fill="#0a0a0f"/>
+  <rect width="800" height="200" fill="url(#grid)"/>
+  <rect width="800" height="200" fill="url(#scanlines)"/>
+
+  <!-- Animated cyber circles -->
+  <circle cx="100" cy="100" r="60" fill="none" stroke="url(#trippy)" stroke-width="1" opacity="0.3">
+    <animate attributeName="r" values="60;80;60" dur="4s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.3;0.1;0.3" dur="4s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="700" cy="100" r="50" fill="none" stroke="url(#trippy)" stroke-width="1" opacity="0.3">
+    <animate attributeName="r" values="50;70;50" dur="3s" repeatCount="indefinite"/>
+  </circle>
+
+  <!-- Electric plug icon -->
+  <g transform="translate(150, 70)" filter="url(#glow)">
+    <rect x="0" y="10" width="40" height="30" rx="4" fill="#a855f7" opacity="0.8"/>
+    <rect x="8" y="0" width="8" height="15" rx="2" fill="#00d9ff"/>
+    <rect x="24" y="0" width="8" height="15" rx="2" fill="#00d9ff"/>
+    <rect x="15" y="40" width="10" height="20" fill="#39ff14"/>
+    <animate attributeName="opacity" values="1;0.7;1" dur="1.5s" repeatCount="indefinite"/>
+  </g>
+
+  <!-- Main title -->
+  <text x="400" y="85" text-anchor="middle" font-family="monospace" font-size="52" font-weight="bold" fill="url(#trippy)" filter="url(#glow)">
+    thePlug
+    <animate attributeName="opacity" values="1;0.8;1" dur="0.1s" repeatCount="indefinite"/>
+  </text>
+
+  <!-- Subtitle with typing cursor effect -->
+  <text x="400" y="130" text-anchor="middle" font-family="monospace" font-size="16" fill="#a855f7">
+    Claude Code Plugin Marketplace
+  </text>
+
+  <!-- Blinking cursor -->
+  <rect x="565" y="117" width="10" height="18" fill="#39ff14">
+    <animate attributeName="opacity" values="1;0;1" dur="1s" repeatCount="indefinite"/>
+  </rect>
+
+  <!-- Bottom decorative line -->
+  <line x1="150" y1="165" x2="650" y2="165" stroke="url(#trippy)" stroke-width="2">
+    <animate attributeName="x1" values="150;200;150" dur="2s" repeatCount="indefinite"/>
+    <animate attributeName="x2" values="650;600;650" dur="2s" repeatCount="indefinite"/>
+  </line>
+
+  <!-- Corner accents -->
+  <path d="M 0 30 L 0 0 L 30 0" fill="none" stroke="#00d9ff" stroke-width="2"/>
+  <path d="M 770 0 L 800 0 L 800 30" fill="none" stroke="#a855f7" stroke-width="2"/>
+  <path d="M 0 170 L 0 200 L 30 200" fill="none" stroke="#39ff14" stroke-width="2"/>
+  <path d="M 770 200 L 800 200 L 800 170" fill="none" stroke="#00d9ff" stroke-width="2"/>
+</svg>

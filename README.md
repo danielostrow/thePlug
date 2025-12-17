@@ -129,7 +129,7 @@ claude plugin install <plugin-name>
 
 ```bash
 # Clone the marketplace
-git clone [https://github.com/danielostrow/theplug-marketplace.git](https://github.com/danielostrow/thePlug.git)
+git clone https://github.com/danielostrow/thePlug.git
 cd theplug
 
 # Install desired plugin

@@ -1,0 +1,24 @@
+{
+  "name": "code-health",
+  "version": "1.0.0",
+  "description": "Comprehensive codebase analysis for security vulnerabilities, technical debt, and dependency health with AI-powered refactoring assistance",
+  "author": {
+    "name": "Daniel Ostrow",
+    "url": "https://neuralintellect.com"
+  },
+  "repository": "https://github.com/neuralintellect/code-health",
+  "license": "MIT",
+  "keywords": [
+    "code-analysis",
+    "security",
+    "technical-debt",
+    "refactoring",
+    "dependencies",
+    "code-quality",
+    "static-analysis",
+    "vulnerability-detection",
+    "OWASP",
+    "CVE"
+  ],
+  "category": "code-quality"
+}

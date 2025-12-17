@@ -1,0 +1,64 @@
+{
+  "outputs": [
+    {
+      "name": "local-json",
+      "destination": "file",
+      "format": "json",
+      "path": "./data/output.json"
+    },
+    {
+      "name": "local-csv",
+      "destination": "file",
+      "format": "csv",
+      "path": "./data/output.csv"
+    },
+    {
+      "name": "postgres-prod",
+      "destination": "postgres",
+      "connection": {
+        "host": "localhost",
+        "port": 5432,
+        "database": "scrapes",
+        "user": "${POSTGRES_USER}",
+        "password": "${POSTGRES_PASSWORD}"
+      },
+      "table": "scraped_data"
+    },
+    {
+      "name": "mongodb-prod",
+      "destination": "mongodb",
+      "connection": {
+        "uri": "${MONGODB_URI}",
+        "database": "scrapes",
+        "collection": "items"
+      }
+    },
+    {
+      "name": "s3-archive",
+      "destination": "s3",
+      "format": "parquet",
+      "connection": {
+        "region": "us-east-1",
+        "bucket": "my-scrape-data",
+        "prefix": "daily-scrapes"
+      }
+    },
+    {
+      "name": "bigquery-analytics",
+      "destination": "bigquery",
+      "connection": {
+        "projectId": "${GCP_PROJECT_ID}",
+        "datasetId": "scrape_data",
+        "tableId": "raw_items"
+      }
+    }
+  ],
+  "default": "local-json",
+  "schema": {
+    "id": "string",
+    "title": "string",
+    "price": "number",
+    "url": "string",
+    "scraped_at": "date"
+  }
+}

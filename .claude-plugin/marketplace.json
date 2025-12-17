@@ -1,0 +1,36 @@
+{
+  "name": "thePlug",
+  "owner": {
+    "name": "Daniel Ostrow",
+    "email": "daniel@neuralintellect.com"
+  },
+  "metadata": {
+    "description": "Premium Claude Code plugins by Neural Intellect",
+    "version": "1.0.0",
+    "pluginRoot": "./"
+  },
+  "plugins": [
+    {
+      "name": "scrape-studio",
+      "source": "./scrape-studio",
+      "description": "Visual AI-powered web scraper creation with dynamic Puppeteer scripts, captcha handling, scheduling, and ETL pipeline integration",
+      "version": "1.0.0",
+      "author": {
+        "name": "Daniel Ostrow",
+        "url": "https://neuralintellect.com"
+      },
+      "homepage": "https://github.com/danielostrow/scrape-studio",
+      "repository": "https://github.com/danielostrow/scrape-studio",
+      "license": "MIT",
+      "keywords": [
+        "web-scraping",
+        "puppeteer",
+        "automation",
+        "etl",
+        "data-extraction",
+        "visual-analysis"
+      ],
+      "category": "data-extraction"
+    }
+  ]
+}

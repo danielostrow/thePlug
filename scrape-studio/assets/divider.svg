@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="20" viewBox="0 0 800 20">
+  <defs>
+    <linearGradient id="dividerGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#00d9ff;stop-opacity:0">
+        <animate attributeName="stop-opacity" values="0;1;0" dur="2s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="50%" style="stop-color:#a855f7;stop-opacity:1"/>
+      <stop offset="100%" style="stop-color:#39ff14;stop-opacity:0">
+        <animate attributeName="stop-opacity" values="0;1;0" dur="2s" repeatCount="indefinite" begin="1s"/>
+      </stop>
+    </linearGradient>
+  </defs>
+  <line x1="0" y1="10" x2="800" y2="10" stroke="url(#dividerGrad)" stroke-width="2"/>
+  <circle cx="400" cy="10" r="4" fill="#a855f7">
+    <animate attributeName="r" values="4;6;4" dur="1s" repeatCount="indefinite"/>
+  </circle>
+</svg>

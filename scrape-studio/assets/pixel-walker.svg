@@ -1,0 +1,105 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="80" viewBox="0 0 800 80">
+  <defs>
+    <linearGradient id="neonGlow" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#00d9ff"/>
+      <stop offset="50%" style="stop-color:#a855f7"/>
+      <stop offset="100%" style="stop-color:#39ff14"/>
+    </linearGradient>
+    <filter id="pixelGlow">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Ground line -->
+  <line x1="0" y1="70" x2="800" y2="70" stroke="url(#neonGlow)" stroke-width="2" stroke-dasharray="10,5">
+    <animate attributeName="stroke-dashoffset" values="0;-30" dur="1s" repeatCount="indefinite"/>
+  </line>
+
+  <!-- Pixel character - 16x16 scaled up, walking animation -->
+  <g filter="url(#pixelGlow)">
+    <animateTransform attributeName="transform" type="translate" values="0,0;750,0;0,0" dur="20s" repeatCount="indefinite"/>
+
+    <!-- Frame 1 (walking) -->
+    <g>
+      <animate attributeName="opacity" values="1;0;0;1" dur="0.4s" repeatCount="indefinite"/>
+      <!-- Body -->
+      <rect x="8" y="24" width="32" height="32" fill="#a855f7"/>
+      <!-- Head -->
+      <rect x="8" y="8" width="32" height="20" fill="#00d9ff"/>
+      <!-- Eyes -->
+      <rect x="12" y="12" width="8" height="8" fill="#0a0a0f"/>
+      <rect x="28" y="12" width="8" height="8" fill="#0a0a0f"/>
+      <!-- Visor shine -->
+      <rect x="14" y="14" width="4" height="4" fill="#fff"/>
+      <rect x="30" y="14" width="4" height="4" fill="#fff"/>
+      <!-- Left leg forward -->
+      <rect x="8" y="56" width="12" height="12" fill="#39ff14"/>
+      <!-- Right leg back -->
+      <rect x="28" y="52" width="12" height="8" fill="#39ff14"/>
+      <!-- Arm -->
+      <rect x="40" y="28" width="8" height="16" fill="#a855f7"/>
+    </g>
+
+    <!-- Frame 2 (walking) -->
+    <g>
+      <animate attributeName="opacity" values="0;1;0;0" dur="0.4s" repeatCount="indefinite"/>
+      <!-- Body -->
+      <rect x="8" y="24" width="32" height="32" fill="#a855f7"/>
+      <!-- Head -->
+      <rect x="8" y="8" width="32" height="20" fill="#00d9ff"/>
+      <!-- Eyes -->
+      <rect x="12" y="12" width="8" height="8" fill="#0a0a0f"/>
+      <rect x="28" y="12" width="8" height="8" fill="#0a0a0f"/>
+      <!-- Visor shine -->
+      <rect x="14" y="14" width="4" height="4" fill="#fff"/>
+      <rect x="30" y="14" width="4" height="4" fill="#fff"/>
+      <!-- Both legs center -->
+      <rect x="12" y="56" width="12" height="10" fill="#39ff14"/>
+      <rect x="24" y="56" width="12" height="10" fill="#39ff14"/>
+      <!-- Arm down -->
+      <rect x="40" y="32" width="8" height="12" fill="#a855f7"/>
+    </g>
+
+    <!-- Frame 3 (walking) -->
+    <g>
+      <animate attributeName="opacity" values="0;0;1;0" dur="0.4s" repeatCount="indefinite"/>
+      <!-- Body -->
+      <rect x="8" y="24" width="32" height="32" fill="#a855f7"/>
+      <!-- Head -->
+      <rect x="8" y="8" width="32" height="20" fill="#00d9ff"/>
+      <!-- Eyes -->
+      <rect x="12" y="12" width="8" height="8" fill="#0a0a0f"/>
+      <rect x="28" y="12" width="8" height="8" fill="#0a0a0f"/>
+      <!-- Visor shine -->
+      <rect x="14" y="14" width="4" height="4" fill="#fff"/>
+      <rect x="30" y="14" width="4" height="4" fill="#fff"/>
+      <!-- Right leg forward -->
+      <rect x="28" y="56" width="12" height="12" fill="#39ff14"/>
+      <!-- Left leg back -->
+      <rect x="8" y="52" width="12" height="8" fill="#39ff14"/>
+      <!-- Arm up -->
+      <rect x="40" y="24" width="8" height="16" fill="#a855f7"/>
+    </g>
+  </g>
+
+  <!-- Data particles following the character -->
+  <g>
+    <animateTransform attributeName="transform" type="translate" values="-20,0;730,0;-20,0" dur="20s" repeatCount="indefinite"/>
+    <text x="0" y="40" font-family="monospace" font-size="12" fill="#00d9ff" opacity="0.7">
+      {"data": true}
+      <animate attributeName="opacity" values="0.7;0.3;0.7" dur="0.5s" repeatCount="indefinite"/>
+    </text>
+  </g>
+
+  <g>
+    <animateTransform attributeName="transform" type="translate" values="-60,0;690,0;-60,0" dur="20s" repeatCount="indefinite"/>
+    <text x="0" y="55" font-family="monospace" font-size="10" fill="#39ff14" opacity="0.5">
+      &lt;html&gt;
+      <animate attributeName="opacity" values="0.5;0.2;0.5" dur="0.7s" repeatCount="indefinite"/>
+    </text>
+  </g>
+</svg>

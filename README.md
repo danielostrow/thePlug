@@ -155,6 +155,7 @@ claude plugins install ./<plugin-name>
 <!-- PLUGINS-START -->
 | Plugin | Version | Description | Last Updated |
 |--------|---------|-------------|--------------|
+| [code-health](./code-health) | 1.0.0 | Comprehensive codebase analysis for security vulnerabilities, technical debt, and dependency health with AI-powered r... | 2025-12-17 |
 | [scrape-studio](./scrape-studio) | 1.0.0 | Visual AI-powered web scraper creation with dynamic Puppeteer scripts, captcha handling, scheduling, and ETL pipeline... | 2025-12-17 |
 <!-- PLUGINS-END -->
 
@@ -256,13 +257,13 @@ Coming Soon
 <table>
 <tr>
 <td align="center">
-<a href="https://github.com/danielostrow" title="Plugins: scrape-studio">
+<a href="https://github.com/danielostrow" title="Plugins: scrape-studio, code-health">
 <img src="https://github.com/danielostrow.png" width="100px;" alt="Daniel Ostrow" style="border-radius:50%"/>
 <br />
 <sub><b>Daniel Ostrow</b></sub>
 </a>
 <br />
-<sub>scrape-studio</sub>
+<sub>scrape-studio, code-health</sub>
 </td>
 <!-- Add more contributors here -->
 </tr>

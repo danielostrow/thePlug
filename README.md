@@ -115,8 +115,11 @@
 <summary><b>⚡ Quick Install (Recommended)</b></summary>
 
 ```bash
-# Install any plugin directly
-claude plugins install /path/to/ClaudePlugins/<plugin-name>
+# Add the marketplace
+claude plugin marketplace add danielostrow/thePlug
+
+# Install any plugin
+claude plugin install <plugin-name>
 ```
 
 </details>
@@ -150,7 +153,9 @@ claude plugins install ./<plugin-name>
 ```
 
 <!-- PLUGINS-START -->
-<!-- Auto-generated plugin list goes here -->
+| Plugin | Version | Description | Last Updated |
+|--------|---------|-------------|--------------|
+| [scrape-studio](./scrape-studio) | 1.0.0 | Visual AI-powered web scraper creation with dynamic Puppeteer scripts, captcha handling, scheduling, and ETL pipeline... | 2025-12-17 |
 <!-- PLUGINS-END -->
 
 ---
@@ -198,14 +203,16 @@ Coming Soon
 ### `🚀 Add Your Plugin`
 1. Fork this repository
 2. Add your plugin directory with valid `.claude-plugin/plugin.json`
-3. Run `./scripts/update-readme.sh`
-4. Submit a pull request
+3. Add your plugin entry to `.claude-plugin/marketplace.json`
+4. Run `./scripts/update-readme.sh`
+5. Submit a pull request
 
 ### `📋 Requirements`
 ```diff
 + .claude-plugin/plugin.json manifest
++ Entry in .claude-plugin/marketplace.json
 + README.md with documentation
-+ Follow Claude Code best practices
++ author.name and repository URL (for contributor profile)
 ```
 
 </td>
@@ -243,30 +250,24 @@ Coming Soon
 
 ![Divider](assets/divider.svg)
 
-## `> AUTHOR.INFO`
+## `> CONTRIBUTORS.INDEX`
 
-```
-╭────────────────────────────────────────────╮
-│                                            │
-│           ██████╗  ██████╗                 │
-│           ██╔══██╗██╔═══██╗                │
-│           ██║  ██║██║   ██║                │
-│           ██║  ██║██║   ██║                │
-│           ██████╔╝╚██████╔╝                │
-│           ╚═════╝  ╚═════╝                 │
-│                                            │
-│         DANIEL OSTROW                      │
-│   Software Engineer & Quantum Researcher   │
-│                                            │
-╰────────────────────────────────────────────╯
-```
-
-<a href="https://neuralintellect.com">
-<img src="https://img.shields.io/badge/🌐_neuralintellect.com-0a0a0f?style=for-the-badge&logoColor=white" alt="Website"/>
+<!-- CONTRIBUTORS-START -->
+<table>
+<tr>
+<td align="center">
+<a href="https://github.com/danielostrow" title="Plugins: scrape-studio">
+<img src="https://github.com/danielostrow.png" width="100px;" alt="Daniel Ostrow" style="border-radius:50%"/>
+<br />
+<sub><b>Daniel Ostrow</b></sub>
 </a>
-<a href="https://github.com/danielostrow">
-<img src="https://img.shields.io/badge/GitHub-@danielostrow-a855f7?style=for-the-badge&logo=github" alt="GitHub"/>
-</a>
+<br />
+<sub>scrape-studio</sub>
+</td>
+<!-- Add more contributors here -->
+</tr>
+</table>
+<!-- CONTRIBUTORS-END -->
 
 ---
 

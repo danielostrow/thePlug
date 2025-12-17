@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 #
 # update-readme.sh - Dynamically updates the plugin table in README.md
 #
@@ -76,13 +76,49 @@ build_categories() {
     done | sort
 }
 
+# Build contributors section from marketplace.json
+build_contributors() {
+    local marketplace_json="$ROOT_DIR/.claude-plugin/marketplace.json"
+
+    if [ ! -f "$marketplace_json" ]; then
+        echo "<!-- No marketplace.json found -->"
+        return
+    fi
+
+    echo '<table>'
+    echo '<tr>'
+
+    # Use jq to group plugins by author and generate contributor entries
+    jq -r '
+        .plugins
+        | group_by(.author.name)
+        | .[]
+        | {
+            author: .[0].author.name,
+            plugins: [.[].name] | join(", "),
+            github: (
+              (.[0].repository // "" | capture("github\\.com/(?<user>[^/]+)").user)
+              // (.[0].author.name | gsub(" "; "") | ascii_downcase)
+            )
+          }
+        | "<td align=\"center\">\n<a href=\"https://github.com/\(.github)\" title=\"Plugins: \(.plugins)\">\n<img src=\"https://github.com/\(.github).png\" width=\"100px;\" alt=\"\(.author)\" style=\"border-radius:50%\"/>\n<br />\n<sub><b>\(.author)</b></sub>\n</a>\n<br />\n<sub>\(.plugins)</sub>\n</td>"
+    ' "$marketplace_json"
+
+    echo '<!-- Add more contributors here -->'
+    echo '</tr>'
+    echo '</table>'
+}
+
 # Update README.md between markers
 update_readme() {
     local temp_file=$(mktemp)
     local in_plugins_section=false
+    local in_contributors_section=false
     local table_content
+    local contributors_content
 
     table_content=$(build_plugin_table)
+    contributors_content=$(build_contributors)
 
     while IFS= read -r line; do
         if [[ "$line" == "<!-- PLUGINS-START -->" ]]; then
@@ -92,7 +128,14 @@ update_readme() {
         elif [[ "$line" == "<!-- PLUGINS-END -->" ]]; then
             echo "$line" >> "$temp_file"
             in_plugins_section=false
-        elif [ "$in_plugins_section" = false ]; then
+        elif [[ "$line" == "<!-- CONTRIBUTORS-START -->" ]]; then
+            echo "$line" >> "$temp_file"
+            echo "$contributors_content" >> "$temp_file"
+            in_contributors_section=true
+        elif [[ "$line" == "<!-- CONTRIBUTORS-END -->" ]]; then
+            echo "$line" >> "$temp_file"
+            in_contributors_section=false
+        elif [ "$in_plugins_section" = false ] && [ "$in_contributors_section" = false ]; then
             echo "$line" >> "$temp_file"
         fi
     done < "$README_FILE"
